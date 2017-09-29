@@ -1,7 +1,3 @@
-# Comment out the line for the platform you need
-FROM resin/raspberry-pi-python:2.7.12-slim
-#FROM resin/raspberrypi3-python:2.7.12-slim
-#FROM resin/raspberry-pi2-python:2.7.12-slim
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV INITSYSTEM on
