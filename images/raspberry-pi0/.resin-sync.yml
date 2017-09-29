@@ -1,0 +1,5 @@
+local_resinos:
+  app-name: ooni-probe
+  build-triggers:
+    - Dockerfile: 9c8a321d76102a1dae1d8ef948245d44532ebba0c63bcd7c330e5ba2da48c940
+  environment: []
