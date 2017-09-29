@@ -84,7 +84,7 @@ support if needed.
 Then push OONI Probe to the device by running:
 
 ```
-sudo resin local push ooniprobe.local --source .
+sudo resin local push ooniprobe.local --source images/raspberry-pi3/
 ```
 
 If you are running on a slow raspberry pi, this may take a while.
@@ -96,9 +96,34 @@ http://ooniprobe.local in a web browser.
 
 ### TODO
 
+These are things that must be done to consider this somewhat "stable":
+
 * Disable passwordless, keyless, root ssh login
+
 * Upgrade dropbear client to latest version and maybe replace it with openssh
   (dropbear is full of security holes). See:
   https://github.com/resin-os/meta-resin/issues/858
+
 * Re-configure openvpn to connect to our own VPN instead of vpn.resin.io (see:
   https://github.com/resin-os/meta-resin/issues/800)
+
+* Build base images of all the target hardware platforms with OONI Probe
+  already on it and the above improvements
+
+### IDEAs
+
+These are cool ideas that I am not yet 100% sure are good ideas
+
+#### BLE configuration
+
+Support configuring the device via BLE in particular setting the wifi network password. This could work that on first start the device is in an inactive state. You click on a hardware button on the device and send it some QR code to prove you are close to it (the QR maybe have on it something like the mac address or some ID that is stored in the hardware of the device). When initialised some other metadata in the QR code is also stored so now only people that know the QR code can further modify the device. Via BLE you can configure the wifi password, tell it to update and maybe
+install additional software.  This should be done inside of the dom0 of the
+host (outside of docker).
+
+#### Auto update
+
+Add support for OONI Probe docker container auto-update.
+
+Maybe if we have BLE configuration we don't actually need auto-update as it can
+be handle inside of the app (like most IoT things do it anyways).
+
