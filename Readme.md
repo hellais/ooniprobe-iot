@@ -14,9 +14,16 @@ their IoT device.
 
 Get the base image from one of the links below:
 
-* https://files.resin.io/resinos/raspberry-pi/2.2.0%2Brev1.dev/image/resin.img.zip (RPi 1)
+* https://files.resin.io/resinos/raspberry-pi/2.2.0%2Brev1.dev/image/resin.img.zip (RPi 1 and RPi Zero)
 * https://files.resin.io/resinos/raspberrypi3/2.3.0%2Brev1.dev/image/resin.img.zip (RPi 2)
 * https://files.resin.io/resinos/raspberry-pi2/2.2.0%2Brev1.dev/image/resin.img.zip (RPi 3)
+
+You can also try out the experimental CLI that will guide you through the
+process of downloading the image you need:
+
+```
+node cli.js download
+```
 
 **2. Install resin-cli**
 
